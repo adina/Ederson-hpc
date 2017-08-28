@@ -253,3 +253,34 @@ for seq in rolling_window(ref_genome2, 19):
 # Create: test file that is a copy of each of the above, but contains one primer. 
 # This will serve as a false positive. 
 
+
+Here are the results we've previously discussed:
+
+First, I've renamed the sequence IDs in your sequence files so we can deal with them easier:
+
+/mnt/research/germs/adina-ederson/functional-genes/NC_primers_renamed.fa
+/mnt/research/germs/adina-ederson/functional-genes/NZ_primers_renamed.fa
+*Note these are with reverse complements removed
+
+Second, here is the list of primers that have an exact match with both forward and reverse primers in NC or NZ.
+
+NC.blastnout.perfectmatch.bothpairs.NC_020059.1.descr2
+NZ.blastnout.perfectmatch.bothpairs.NZ_AQHN01000084.1.descr2
+*The first column is the ID from the orignal genome fasta file, second is the gene description in the genome file, the third is additional product information from the associated genbank file, and the 4th column is the primer ID number.
+
+The next step is to choose which genes you want, a trick to suggest is:
+cut -f 2 NZ.blastnout.perfectmatch.bothpairs.NZ_AQHN01000084.1.descr2 | sort | uniq
+
+And to generate a list of primer #s that you want the primer sequences for and then we can text those against your genomes.  I'll write some instructions on how to go from a list of Primer IDs (see below for example)...but your task for next week if you get a chance is to take a look see at the genes.  I also want you to have some initial results or ideas for your master's paper on the inoculants so please prioritize that over this if practical.
+
+If you wanted primers 1, 2, 3, 4, and 134 -- the file should contain this for the next step in pipeline
+=======
+
+1
+2
+3
+4
+134
+
+Cheers,
+Adina

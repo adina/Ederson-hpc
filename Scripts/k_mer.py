@@ -32,8 +32,8 @@ def rolling_window(seq, window_size):
 
 def main():
     """main for k-mer.py, find kmers in a .fa file."""
-    fname = sys.argv[1:2]
-    fname_compare = sys.argv[2:]
+    fname = sys.argv[1]
+    fname_compare = sys.argv[2]
 
 
     ref_genome1 = consume_genome(fname)
